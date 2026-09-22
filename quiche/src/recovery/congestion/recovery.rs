@@ -190,6 +190,7 @@ impl RecoveryEpoch {
                         pkt_num: unacked.pkt_num,
                         time_sent: unacked.time_sent,
                         size: unacked.size,
+                        in_flight: unacked.in_flight,
 
                         rtt: now.saturating_duration_since(unacked.time_sent),
                         delivered: unacked.delivered,
