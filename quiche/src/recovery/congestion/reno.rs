@@ -72,6 +72,10 @@ fn on_packets_acked(
 fn on_packet_acked(
     r: &mut Congestion, packet: &Acked, now: Instant, rtt_stats: &RttStats,
 ) {
+    if !packet.in_flight {
+        return;
+    }
+
     if r.in_congestion_recovery(packet.time_sent) {
         return;
     }
