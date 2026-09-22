@@ -1142,6 +1142,9 @@ pub struct Acked {
 
     pub size: usize,
 
+    /// Whether the acknowledged packet contributed to bytes in flight.
+    pub in_flight: bool,
+
     pub rtt: Duration,
 
     pub delivered: usize,
